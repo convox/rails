@@ -1,7 +1,7 @@
 FROM convox/ruby
 
-RUN apk update
-RUN apk add nginx nodejs yaml
+RUN apt-get -yy install libmysqld-dev libpq-dev libsqlite3-dev
+RUN apt-get -yy install nginx nodejs
 
 ENV PORT 5000
 
