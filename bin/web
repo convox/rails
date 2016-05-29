@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# delete old server.pid
+rm -f /app/tmp/pids/server.pid
+
 # start up nginx in the background
 nginx &
 
