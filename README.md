@@ -1,3 +1,7 @@
+# This project is no longer maintained
+
+To help Convox users prepare their apps for deployment as quickly and conveniently as possible, we now recommend using `convox init` and Buildpacks instead of writing custom Dockerfiles that build `FROM` base images like this one. For more information, see our [doc about the convox init command](https://convox.com/docs/command-convox-init/).
+
 # convox/rails
 
 Convox base image for Ruby on Rails
