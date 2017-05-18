@@ -1,7 +1,6 @@
 FROM convox/ruby
 
-RUN apt-get -yy install libmysqld-dev libpq-dev libsqlite3-dev
-RUN apt-get -yy install nginx nodejs
+RUN apt-get update && apt-get -y install libmysqld-dev libpq-dev libsqlite3-dev nginx nodejs tzdata
 
 ENV PORT 5000
 
