@@ -26,4 +26,4 @@ RUN gem install bundler -v ${BUNDLER_VERSION} && rbenv rehash
 WORKDIR /app
 COPY conf/convox.rb /app/config/initializers/convox.rb
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
