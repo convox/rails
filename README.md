@@ -26,27 +26,20 @@ Convox base image for Ruby on Rails
 Application using this image should:
 
 * Copy their source files into `/app`
-* Listen for HTTP requests on port `5000`.
-
-## Exports
-
-* Listen for HTTP request on port `4000` and redirects all requests to `https://`.
-* Listen for HTTP requests on port `4001` accepting PROXY protocol and injecting `X-Forwarded-For` headers.
+* Listen for HTTP requests on port `3000`.
 
 ## Example Configuration
 
 Using this image in your `docker-compose.yml` should look something like this:
 
     labels:
-      - convox.port.443.protocol=tls
-      - convox.port.443.proxy=true
+      - convox.port.80.protocol=http
+      - convox.port.443.protocol=https
     ports:
-      - 80:4000
-      - 443:4001
+      - 80:3000
+      - 443:3000
 
 ## Includes
-
-### Base Image: [convox/ruby](convox/ruby)
 
 ### Standard Ruby development headers
 
@@ -54,10 +47,3 @@ Using this image in your `docker-compose.yml` should look something like this:
 * `libpq-dev`
 * `libsqlite3-dev`
 * `ruby-dev`
-
-### nginx
-
-* Buffers incoming HTTP requests
-* Accept PROXY protocol headers to discover source IP
-* Inject `X-Forwarded-Proto` and `X-Forwarded-For`
-* Serve `/assets` from disk without hitting the Rails app
