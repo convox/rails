@@ -4,7 +4,7 @@ Convox base image for Ruby on Rails
 
 ## Usage
 
-	FROM convox/rails
+	FROM convox/rails:nginx
 	
 	# copy only the files needed for bundle install
 	COPY Gemfile      /app/Gemfile
