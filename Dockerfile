@@ -15,7 +15,7 @@ RUN apt-get update && apt-get -y install \
   tzdata \
   zlib1g-dev
 
-ARG RUBY_VERSION=2.5.0
+ARG RUBY_VERSION=2.4.4
 ENV PATH /root/.rbenv/shims:${PATH}
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build \
   && rbenv install ${RUBY_VERSION} \
