@@ -15,13 +15,13 @@ RUN apt-get update && apt-get -y install \
   tzdata \
   zlib1g-dev
 
-ARG RUBY_VERSION=2.4.4
+ARG RUBY_VERSION=2.5.3
 ENV PATH /root/.rbenv/shims:${PATH}
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build \
   && rbenv install ${RUBY_VERSION} \
   && rbenv global ${RUBY_VERSION}
 
-ARG BUNDLER_VERSION=1.16.1
+ARG BUNDLER_VERSION=1.17.1
 RUN gem install bundler -v ${BUNDLER_VERSION} && rbenv rehash
 
 ARG NODE_VERSION=8.9.4
